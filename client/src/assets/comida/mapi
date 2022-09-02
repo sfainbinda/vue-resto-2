@@ -1,0 +1,234 @@
+[
+  {
+    "imagen": "assets/comida/empanadas_arabes.png",
+    "nombre": "Empanadas árabes",
+    "descripcion": "Carne de vaca, cebolla, pimienta negra, pimiento y tomate",
+    "valor": 80,
+    "categoria": "empanadas",
+    "id": "1"
+  },
+  {
+    "imagen": "assets/comida/empanadas_criollas.png",
+    "nombre": "Empanadas criollas",
+    "descripcion": "Carne de vaca, cebolla, comino, huevo, papa, pimiento y cebolla de verdeo.",
+    "valor": 80,
+    "categoria": "empanadas",
+    "id": "2"
+  },
+  {
+    "imagen": "assets/comida/empanadas_jamon_queso.png",
+    "nombre": "Empanadas de jamón y queso",
+    "descripcion": "Jamón y mozzarella.",
+    "valor": 80,
+    "categoria": "empanadas",
+    "id": "3"
+  },
+  {
+    "imagen": "assets/comida/ensalada_caesar.png",
+    "nombre": "Ensalada caesar",
+    "descripcion": "Pechuga de pollo, lechuga, croutons, queso y aderezo Caesar.",
+    "valor": 700,
+    "categoria": "ensaladas",
+    "id": "4"
+  },
+  {
+    "imagen": "assets/comida/ensalada_completa.png",
+    "nombre": "Ensalada completa",
+    "descripcion": "Lechuga, tomate, zanahoria, huevo y remolacha.",
+    "valor": 360,
+    "categoria": "ensaladas",
+    "id": "5"
+  },
+  {
+    "imagen": "assets/comida/ensalada_mediterranea.png",
+    "nombre": "Ensalada mediterranea",
+    "descripcion": "Tomate, dados de queso, hojas de albahaca y olivas negras.",
+    "valor": 700,
+    "categoria": "ensaladas",
+    "id": "6"
+  },
+  {
+    "imagen": "assets/comida/hamburguesa_americana.png",
+    "nombre": "Hamburguesa americana",
+    "descripcion": "BBQ, cebolla caramelizada, bacon, queso, carne, tomate, lechuga y mayonesa.",
+    "valor": 1200,
+    "categoria": "hamburguesas",
+    "id": "7"
+  },
+  {
+    "imagen": "assets/comida/hamburguesa_cheddar.png",
+    "nombre": "Hamburguesa cheddar",
+    "descripcion": "Cebolla morada, bacon, cheddar, carne, tomate, lechuga y mayonesa.",
+    "valor": 1200,
+    "categoria": "hamburguesas",
+    "id": "8"
+  },
+  {
+    "imagen": "assets/comida/hamburguesa_criolla.png",
+    "nombre": "Hamburguesa criolla",
+    "descripcion": "Cebolla morada, morrón, chimi, carne, tomate, lechuga y mayonesa.",
+    "valor": 1200,
+    "categoria": "hamburguesas",
+    "id": "9"
+  },
+  {
+    "imagen": "assets/comida/hamburguesa_doble.png",
+    "nombre": "Hamburguesa doble",
+    "descripcion": "Doble carne, doble queso, tomate, lechuga y mayonesa.",
+    "valor": 1800,
+    "categoria": "hamburguesas",
+    "id": "10"
+  },
+  {
+    "imagen": "assets/comida/hamburguesa_simple.png",
+    "nombre": "Hamburguesa simple",
+    "descripcion": "Queso, carne, lechuga y mayonesa.",
+    "valor": 900,
+    "categoria": "hamburguesas",
+    "id": "11"
+  },
+  {
+    "imagen": "assets/comida/lomo_americano.png",
+    "nombre": "Lomo americano",
+    "descripcion": "Lomo, cebolla salteada, queso, huevo revuelto, panceta, mayonesa y salsa BBQ.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "12"
+  },
+  {
+    "imagen": "assets/comida/lomo_chimi.png",
+    "nombre": "Lomo chimi",
+    "descripcion": "Lomo, tomate, lechuga, queso, ají, mayonesa, huevo, morrón y chimi.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "13"
+  },
+  {
+    "imagen": "assets/comida/lomo_completo.png",
+    "nombre": "Lomo completo",
+    "descripcion": "Lomo, queso, huevo, tomate, lechuga, mayonesa y jamón.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "14"
+  },
+  {
+    "imagen": "assets/comida/lomo_milanesa.png",
+    "nombre": "Lomo de mila",
+    "descripcion": "Milanesa de ternera, tomate, lechuga, huevo, jamón, queso y mayonesa.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "15"
+  },
+  {
+    "imagen": "assets/comida/lomo_pollo.png",
+    "nombre": "Lomo de pollo",
+    "descripcion": "Bife de pollo, queso, huevo, tomate, lechuga, mayonesa y jamón.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "16"
+  },
+  {
+    "imagen": "assets/comida/lomo_vegano.png",
+    "nombre": "Lomo vegetariano",
+    "descripcion": "Berenjena, tomate, lechuga, huevo, queso y mayonesa.",
+    "valor": 1600,
+    "categoria": "lomos",
+    "id": "17"
+  },
+  {
+    "imagen": "assets/comida/papas_cheddar_bacon.png",
+    "nombre": "Papas fritas cheddar y bacon",
+    "descripcion": "Papas fritas bañadas en cheddar y una lluvia de bacon salteado.",
+    "valor": 500,
+    "categoria": "papas",
+    "id": "18"
+  },
+  {
+    "imagen": "assets/comida/papas_huevo.png",
+    "nombre": "Papas fritas con huevo",
+    "descripcion": "Papas fritas con huevo revuelto",
+    "valor": 500,
+    "categoria": "papas",
+    "id": "19"
+  },
+  {
+    "imagen": "assets/comida/papas_tradicionales.png",
+    "nombre": "Papas fritas",
+    "descripcion": "Papas fritas tradicionales.",
+    "valor": 500,
+    "categoria": "papas",
+    "id": "20"
+  },
+  {
+    "imagen": "assets/comida/pizza_calabresa.png",
+    "nombre": "Pizza calabresa",
+    "descripcion": "Salsa de tomate, mozzarella y longaniza.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "21"
+  },
+  {
+    "imagen": "assets/comida/pizza_fugazzeta.png",
+    "nombre": "Pizza fugazzeta",
+    "descripcion": "Mozzarella, cebolla, orégano y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "22"
+  },
+  {
+    "imagen": "assets/comida/pizza_jamon_palmitos.png",
+    "nombre": "Pizza jamón y palmitos",
+    "descripcion": "Salsa de tomate, mozzarella, jamón, palmitos, salsa golf, orégano, y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "23"
+  },
+  {
+    "imagen": "assets/comida/pizza_jamon.png",
+    "nombre": "Pizza jamón",
+    "descripcion": "Salsa de tomate, mozzarella, jamón, orégano, y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "24"
+  },
+  {
+    "imagen": "assets/comida/pizza_mozzarella.png",
+    "nombre": "Pizza mozzarella",
+    "descripcion": "Salsa de tomate, mozzarella, orégano y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "25"
+  },
+  {
+    "imagen": "assets/comida/pizza_napolitana.png",
+    "nombre": "Pizza napolitana",
+    "descripcion": "Salsa de tomate, mozzarella, jamón, rodajas de tomate, orégano y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "26"
+  },
+  {
+    "imagen": "assets/comida/pizza_roquefort.png",
+    "nombre": "Pizza roquefort",
+    "descripcion": "Salsa de tomate, roquefort, mozzarella, orégano y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "27"
+  },
+  {
+    "imagen": "assets/comida/pizza_rucula.png",
+    "nombre": "Pizza rucula",
+    "descripcion": "Salsa de tomate, mozzarella, rúcula, jamón crudo, aceite de oliva y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "28"
+  },
+  {
+    "imagen": "assets/comida/pizza_serrana.png",
+    "nombre": "Pizza jamón crudo",
+    "descripcion": "Salsa de tomate, mozzarella, jamón crudo, orégano y aceitunas.",
+    "valor": 1200,
+    "categoria": "pizzas",
+    "id": "29"
+  }
+]
