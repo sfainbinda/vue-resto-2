@@ -283,9 +283,13 @@ export default {
     ...mapState("productos", ["error"]),
   },
   async mounted() {
+    this.$store.dispatch("cargando/setCargando", { cargando: true });
     if (this.$route.params.id != undefined) {
-      await this.obtenerProducto(this.$route.params.id);
+      await this.obtenerProducto(this.$route.params.id).then(() =>
+        this.$store.dispatch("cargando/setCargando", { cargando: false })
+      );
     }
+    this.$store.dispatch("cargando/setCargando", { cargando: false });
   },
   methods: {
     async obtenerProducto(id) {

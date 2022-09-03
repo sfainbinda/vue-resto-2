@@ -35,7 +35,7 @@ const routes = [
       }
     },
     children: [
-     {
+      {
         path: "/inicio/productos",
         name: "Productos",
         component: ProductosVista,
@@ -60,8 +60,22 @@ const routes = [
         },
       },
       {
-        path: "/inicio/admin/crud",
-        name: "ProductoCrud",
+        path: "/inicio/admin/alta",
+        name: "ProductoAlta",
+        component: ProductoCrudCmpnt,
+        beforeEnter: (to, from, next) => {
+          let usuario = JSON.parse(sessionStorage.getItem("usuario"));
+          if (usuario.admin) {
+            next();
+          } else {
+            router.push("/");
+            next(false);
+          }
+        },
+      },
+      {
+        path: "/inicio/admin/edicion/:id",
+        name: "ProductoEdicion",
         component: ProductoCrudCmpnt,
         beforeEnter: (to, from, next) => {
           let usuario = JSON.parse(sessionStorage.getItem("usuario"));

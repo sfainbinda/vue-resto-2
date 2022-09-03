@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     agregarProducto() {
-      this.$router.push({ name: "ProductoCrud" });
+      this.$router.push({ name: "ProductoAlta" });
     },
     calcularTotal() {
       let carrito = this.$store.getters["carrito/info"];

@@ -12,7 +12,7 @@
           <div class="d-flex flex-column justify-content-center">
             <span class="fs-6 fw-bolder">{{ producto.nombre }}</span>
             <span class="fs-6">{{ producto.descripcion }}</span>
-            <span class="fs-6">$ {{ producto.valor }},00</span>
+            <span class="fs-6">$ {{ producto.valor }}</span>
           </div>
           <div v-show="existe(producto)">
             <button class="btn btn-success etiqueta" disabled type="button">
@@ -20,10 +20,7 @@
             </button>
           </div>
         </div>
-        <div
-          v-if="!existe(producto) && !$store.getters['usuario/esAdmin']"
-          class="text-end"
-        >
+        <div v-if="!existe(producto) && !usuario.admin" class="text-end">
           <button
             type="button"
             class="btn btn-secondary btn-sm me-1"
@@ -39,7 +36,7 @@
             Agregar al carrito
           </button>
         </div>
-        <div v-if="$store.getters['usuario/esAdmin']" class="text-end">
+        <div v-if="usuario.admin" class="text-end">
           <button
             @click="eliminarProducto(producto.id)"
             type="button"
@@ -86,7 +83,7 @@
             <div class="d-flex flex-column">
               <span class="fs-6 fw-bolder">Ingredientes</span>
               <span class="fs-6">{{ producto.descripcion }}</span>
-              <span class="fs-6 fw-bolder">$ {{ producto.valor }},00</span>
+              <span class="fs-6 fw-bolder">$ {{ producto.valor }}</span>
             </div>
           </div>
           <div class="modal-footer">
@@ -106,7 +103,6 @@
 <script>
 import { productosMixins } from "../store/mixins/productosMixins.js";
 import { mapState } from "vuex";
-
 export default {
   name: "ProductoCmpnt",
   mixins: [productosMixins],
@@ -128,7 +124,7 @@ export default {
       this.$store.dispatch("carrito/agregarProducto", { producto });
     },
     existe(producto) {
-      let carrito = this.$store.getters["carrito/info"];
+      let carrito = this.carrito;
       if (carrito.length > 0) {
         let existe = carrito.find((item) => item.producto.id == producto.id);
         if (existe) {
@@ -163,8 +159,9 @@ export default {
         });
     },
     editarProducto(id) {
+      console.log(id);
       this.$router.push({
-        name: "ProductoCrud",
+        name: "ProductoEdicion",
         params: {
           id: id,
         },

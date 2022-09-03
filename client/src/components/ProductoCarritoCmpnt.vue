@@ -25,7 +25,7 @@
         </button>
       </div>
       <div class="d-flex flex-column justify-content-center align-items-end">
-        <span class="fw-bolder">$ {{ calcularSubtotal(item) }},00</span>
+        <span class="fw-bolder">$ {{ calcularSubtotal(item) }}</span>
       </div>
     </div>
   </div>

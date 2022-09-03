@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div v-if="$store.getters['carrito/info'].length > 0" class="card checkout">
+    <div v-if="this.carrito.length > 0" class="card checkout">
       <h5 class="card-header">Carrito de compras - Checkout</h5>
       <div class="card-body">
         <ProductoCarrito
-          v-for="(item, indice) in $store.getters['carrito/info']"
+          v-for="(item, indice) in this.carrito"
           :key="indice"
           :indice="indice"
           :item="item"
@@ -241,7 +241,7 @@
           <hr />
           <div class="mb-3 text-end">
             <span class="fs-4"
-              >Total a pagar: <b>$ {{ total }}</b></span
+              >Total a pagar: <b>$ {{ calcularTotal() }}</b></span
             >
           </div>
           <div class="text-center">
@@ -263,13 +263,15 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 import ProductoCarrito from "@/components/ProductoCarritoCmpnt.vue";
 import dayjs from "dayjs";
 export default {
   components: { ProductoCarrito },
   name: "CheckoutCmpnt",
-  props: {
-    total: Number,
+  computed: {
+    ...mapState("usuario", ["usuario"]),
+    ...mapState("carrito", ["carrito"]),
   },
   data() {
     return {
@@ -302,9 +304,10 @@ export default {
       if (!error) {
         this.$store.dispatch("cargando/setCargando", { cargando: true });
         let pedido = {
-          usuarioId: this.$store.getters["usuario/usuarioId"],
-          items: this.$store.getters["carrito/info"],
-          valor: this.total,
+          usuarioId: this.usuario.id,
+          usuario: `${this.usuario.nombre}, ${this.usuario.apellido}`,
+          items: this.carrito,
+          valor: this.calcularTotal(),
           envio: this.envio,
           efectivo: this.efectivo,
           codigo: this.codigo,
@@ -340,8 +343,8 @@ export default {
       }
     },
     validarDireccion() {
-      let regex =
-        /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+      let regex = /[a-zA-ZÀ-ÿ\u00f1\u00d1.,-]$/;
+      // /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
       let esValido = regex.test(this.direccion);
       this.errores.direccion = !esValido;
     },
@@ -351,8 +354,8 @@ export default {
       this.errores.numeracion = !esValido;
     },
     validarBarrio() {
-      let regex =
-        /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+      let regex = /[a-zA-ZÀ-ÿ\u00f1\u00d1.,-]$/;
+      // /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
       let esValido = regex.test(this.barrio);
       this.errores.barrio = !esValido;
     },
@@ -386,16 +389,13 @@ export default {
       } else {
         this.validarCodigoMP();
       }
-
       this.validarTelefono();
-
       for (const propiedad in this.errores) {
         if (this.errores[propiedad] == true) {
           return false;
         }
       }
-
-      if (this.$store.getters["carrito/info"].length == 0) {
+      if (this.carrito.length == 0) {
         return false;
       }
       return true;
@@ -409,6 +409,15 @@ export default {
         cambio: false,
         telefono: false,
       };
+    },
+    calcularTotal() {
+      let parcial = 0;
+      if (this.carrito.length) {
+        this.carrito.forEach((item) => {
+          parcial += item.producto.valor * item.cantidad;
+        });
+      }
+      return parcial;
     },
   },
 };

@@ -1,15 +1,23 @@
 <template>
   <div class="row">
-    <p
-      v-if="$store.getters['usuario/esAdmin']"
-      class="fs-4 fw-bolder f text-start mt-2 mb-4"
-    >
+    <p v-if="usuario.admin" class="fs-4 fw-bolder f text-start mt-2 mb-4">
       Pedidos realizados
     </p>
     <p v-else class="fs-4 fw-bolder f text-start mt-2 mb-4">
       Compras realizadas
     </p>
+    <div v-if="pedidosFiltrados.length == 0">
+      <div v-if="usuario.admin" class="alert alert-primary" role="alert">
+        Aún no se agregaron pedidos.
+      </div>
+      <div v-else class="alert alert-primary" role="alert">
+        Aún no realizaste ningún pedido. Ve a la sección
+        <router-link :to="{ name: 'Productos' }">productos</router-link> para
+        comprar.
+      </div>
+    </div>
     <div
+      v-else
       class="col-sm-6 pb-3"
       v-for="pedido in pedidosFiltrados"
       :key="pedido.id"
@@ -18,10 +26,7 @@
         <h5 class="card-header">Pedido #{{ pedido.id }}</h5>
         <div class="card-body">
           <div class="d-flex flex-column mb-3">
-            <span
-              ><b>Cliente:</b>
-              {{ $store.getters["usuario/nombreCompleto"] }}</span
-            >
+            <span><b>Cliente:</b> {{ pedido.usuario }}</span>
             <span><b>Teléfono:</b> {{ pedido.telefono }}</span>
             <span><b>Fecha y hora:</b> {{ pedido.fecha }}</span>
             <hr />
@@ -94,7 +99,7 @@ export default {
     pedidosFiltrados() {
       let filtrados = [];
       if (this.pedidos.length > 0) {
-        if (this.$store.getters["usuario/esAdmin"]) {
+        if (this.usuario.admin) {
           filtrados = this.pedidos;
         } else {
           filtrados = this.pedidos.filter(

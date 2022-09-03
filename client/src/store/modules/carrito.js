@@ -2,21 +2,7 @@ import axios from "axios";
 
 let state = {
   carrito: JSON.parse(sessionStorage.getItem("carrito")) || [],
-  // data: {
-  //   envio: false,
-  //   direccion: "",
-  //   numeracion: "",
-  //   piso: "",
-  //   departamento: "",
-  //   barrio: "",
-  //   observaciones: "",
-  //   telefono: "",
-  //   efectivo: false,
-  //   cambio: 0,
-  //   codigo: 0,
-  //   usuarioId: 0,
-  // },
-  // error: false,
+  error: false,
 };
 
 const mutations = {

@@ -80,8 +80,6 @@
               class="dropdown-menu dropdown-menu-dark text-small shadow"
               aria-labelledby="dropdownUser1"
             >
-              <!-- <li><a class="dropdown-item" href="">Mis datos</a></li>
-              <li><hr class="dropdown-divider" /></li> -->
               <li @click="desloguear">
                 <a class="dropdown-item" href="">Cerrar sesión</a>
               </li>
@@ -90,6 +88,7 @@
         </div>
       </div>
     </header>
+    <div class="anexo"></div>
   </div>
 </template>
 <script>

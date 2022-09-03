@@ -12,7 +12,7 @@
           <div class="d-flex flex-column justify-content-center">
             <span class="fs-6 fw-bolder">{{ producto.nombre }}</span>
             <span class="fs-6">{{ producto.descripcion }}</span>
-            <span class="fs-6">$ {{ producto.valor }},00</span>
+            <span class="fs-6">$ {{ producto.valor }}</span>
           </div>
         </div>
         <div class="text-end">
